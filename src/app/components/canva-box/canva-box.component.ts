@@ -37,7 +37,7 @@ export class CanvaBoxComponent implements OnInit {
     scene.add(directionalLight);
 */
 
-    // Configurer le rendu
+    // Configure le rendu
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
       alpha: true,
@@ -46,37 +46,51 @@ export class CanvaBoxComponent implements OnInit {
     renderer.setSize(canvasContainer.offsetWidth, canvasContainer.offsetHeight);
 
     let mixer: THREE.AnimationMixer | undefined;
-
-    // Charger le modèle GLTF
+    let model: THREE.Group | undefined;
+    const clock = new THREE.Clock();
+    
     const loader = new GLTFLoader();
     loader.load(
       'assets/planet.gltf',
       (gltf) => {
         const model = gltf.scene;
+        model.rotation.x = Math.PI / 2; 
         scene.add(model);
+
+        // Récupére la caméra du modèle
         const camera = gltf.cameras[0] as THREE.PerspectiveCamera;
-        if(camera){
+        camera.position.y += 2
+        if (camera) {
+          // Utilise la caméra du modèle
           camera.aspect = canvasContainer.offsetWidth / canvasContainer.offsetHeight;
           camera.updateProjectionMatrix();
 
-          // Configurer les contrôles
-          const controls = new OrbitControls(camera, renderer.domElement);
-          controls.update();
-
+          // Configurer l'animation
           mixer = new THREE.AnimationMixer(model);
           gltf.animations.forEach((clip) => {
             mixer?.clipAction(clip).play();
           });
 
+          // Initialise le rendu de la scène avec le modèle visible
+          renderer.render(scene, camera);
+
+          // Animation de la scène
           const animate = () => {
             const delta = clock.getDelta();
             mixer?.update(delta);
-            controls.update();
             renderer.render(scene, camera);
           };
 
-          renderer.setAnimationLoop(animate);
+          // Démarre l'animation lorsque l'utilisateur fait défiler la souris vers le bas
+          const onScroll = (event: WheelEvent) => {
+            if (event.deltaY > 0) {
+              renderer.setAnimationLoop(animate);
+              window.removeEventListener('wheel', onScroll);
+            }
+          };
+          window.addEventListener('wheel', onScroll);
 
+          // Gére le redimensionnement de la fenêtre
           window.addEventListener('resize', () => {
             camera.aspect = canvasContainer.offsetWidth / canvasContainer.offsetHeight;
             camera.updateProjectionMatrix();
@@ -91,7 +105,5 @@ export class CanvaBoxComponent implements OnInit {
         console.error('An error happened', error);
       }
     );
-
-    const clock = new THREE.Clock();
   }
 }

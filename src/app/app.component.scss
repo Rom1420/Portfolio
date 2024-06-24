@@ -2,29 +2,79 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
-    padding: 70px 0px; 
+    justify-content: flex-start;
+    padding: 0px 0px; 
     align-items: flex-start;
-    background-color: rgb(59, 59, 59);
+    background-color: var(--background);
 }
 
-.side-container{
-    width: 25%;
+.profil-container{
+    margin-top: 9%;
+    margin-left: 9%;
+    width: 30%;
     color: #ffffffa8;
     font-family: 'Roboto', sans-serif;
     font-size: 2vw;
+
+    & p{
+        font-family: 'FiraCode', monospace;
+        font-weight: 400;
+        color: var(--sea-blue);
+        margin-bottom: 0.5rem;
+    }
+}
+
+.name-container{
+    display: flex;
+    flex-direction: column;
+
+    & h1{
+        font-weight: 900;
+        line-height: 1.1;
+        font-family: 'Inter', sans-serif;
+        
+    }
+
+    & .firstname{
+        color: var(--light-white);
+    }
+
+    & .lastname{
+        color: var(--light-white-lighter);
+    }
 }
 
 canva-box{
-    width: 50%;
-    height: 50%;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    right: -5%;
+    top: 5%;
+    width: 70%;
+    height: 95%;
 }
 
 .header{
     height: 10%;
     width: 100%;
     display: flex;
-    background-color: black;
+    background-color: var(--background);
+}
+
+.short-bio-text{
+    margin-top: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--light-white-lighter);
+
+    & a{
+        text-decoration: none;
+        color: var(--sea-blue);
+        transition: color 0.3s ease-in-out;
+    }
+
+    & a:hover{
+        color: var(--sea-blue-lighter);
+    }
+
+    & .highlight-text{
+        color: var(--sea-blue);
+    }
 }

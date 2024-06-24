@@ -1,6 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FiraCode';
+  src: url('./assets/fonts/FiraCode.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-  }
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333333; 
+  font-size: 16px; 
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  color: #fff; 
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 1.0rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+:root{
+  --background: #0a192f;
+  --sea-blue: #5496BF;
+  --sea-blue-lighter: #76a9c9;
+  --light-white: #ccd6f6;
+  --light-white-lighter: #ccd6f6af;
+}
