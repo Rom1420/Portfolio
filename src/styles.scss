@@ -30,7 +30,7 @@
 body {
   font-family: 'Inter', sans-serif;
   color: #333333; 
-  font-size: 16px; 
+  font-size: 1rem; 
   line-height: 1.5;
 }
 
@@ -40,33 +40,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 5vw; /* Utiliser vw pour une taille réactive */
   font-weight: bold;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 3.5vw; /* Utiliser vw pour une taille réactive */
   font-weight: bold;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 3vw; /* Utiliser vw pour une taille réactive */
   font-weight: bold;
 }
 
 h4 {
-  font-size: 1.75rem;
+  font-size: 2.5vw; /* Utiliser vw pour une taille réactive */
   font-weight: bold;
 }
 
 h5 {
-  font-size: 1.0rem;
+  font-size: 1vw; /* Utiliser vw pour une taille réactive */
   font-weight: bold;
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.5vw; /* Utiliser rem pour une base réactive */
 }
+
 
 button{
   display: inline-block;

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CanvaBoxComponent } from './components/canva-box/canva-box.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ScrollComponent } from './components/scroll/scroll.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     AppComponent, 
     CanvaBoxComponent,
     NavBarComponent,
+    ScrollComponent
   ],
   bootstrap: [AppComponent],
 })
