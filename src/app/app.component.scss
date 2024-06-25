@@ -6,6 +6,7 @@
     padding: 0px 0px; 
     align-items: flex-start;
     background-color: var(--background);
+    position: relative;
 }
 
 .profil-container{
@@ -45,11 +46,12 @@
 }
 
 canva-box{
-    position: absolute;
+    position: fixed;
     right: -5%;
-    top: 5%;
+    top: 0;
     width: 70%;
-    height: 95%;
+    height: 100vh;
+    pointer-events: none;
 }
 
 .header{
@@ -77,4 +79,9 @@ canva-box{
     & .highlight-text{
         color: var(--sea-blue);
     }
+}
+
+nav-bar{
+    width: 100%;
+    height: 100%;
 }

@@ -4,15 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CanvaBoxComponent } from './components/canva-box/canva-box.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   imports: [
     BrowserModule, 
-    FormsModule
+    FormsModule,
   ],
   declarations: [
     AppComponent, 
-    CanvaBoxComponent
+    CanvaBoxComponent,
+    NavBarComponent,
   ],
   bootstrap: [AppComponent],
 })

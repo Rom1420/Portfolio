@@ -59,7 +59,7 @@ export class CanvaBoxComponent implements OnInit {
 
         // Récupére la caméra du modèle
         const camera = gltf.cameras[0] as THREE.PerspectiveCamera;
-        camera.position.y += 2
+        camera.position.y += 1.5
         if (camera) {
           // Utilise la caméra du modèle
           camera.aspect = canvasContainer.offsetWidth / canvasContainer.offsetHeight;
@@ -80,15 +80,7 @@ export class CanvaBoxComponent implements OnInit {
             mixer?.update(delta);
             renderer.render(scene, camera);
           };
-
-          // Démarre l'animation lorsque l'utilisateur fait défiler la souris vers le bas
-          const onScroll = (event: WheelEvent) => {
-            if (event.deltaY > 0) {
-              renderer.setAnimationLoop(animate);
-              window.removeEventListener('wheel', onScroll);
-            }
-          };
-          window.addEventListener('wheel', onScroll);
+          renderer.setAnimationLoop(animate);
 
           // Gére le redimensionnement de la fenêtre
           window.addEventListener('resize', () => {
