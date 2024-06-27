@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--background);
   margin: 0rem 2.5rem;
 }
 
@@ -63,7 +62,9 @@ svg {
 }
 
 button.resume-button{
-    margin-left: 90px ;
+    margin-left: 90px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 

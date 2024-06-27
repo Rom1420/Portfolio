@@ -1,21 +1,31 @@
 .main-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
     padding: 0px 0px; 
-    align-items: flex-start;
-    background-color: var(--background);
     position: relative;
+    overflow: visible;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+.snap-section {
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
 }
 
 .profil-container{
+    overflow: visible;
     margin-top: 9%;
     margin-left: 9%;
     width: 30%;
     color: #ffffffa8;
     font-family: 'Roboto', sans-serif;
     font-size: 2vw;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;;
 
     & p{
         font-family: 'FiraCode', monospace;
@@ -44,13 +54,14 @@
     }
 }
 
-canva-box{
-    position: fixed;
+planet {
+    position: sticky;
     right: -5%;
-    top: 0;
-    width: 70%;
     height: 100vh;
     pointer-events: none;
+    transform: translateY(0) translateX(0);
+    z-index: 0;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .header{
@@ -58,6 +69,8 @@ canva-box{
     width: 100%;
     display: flex;
     background-color: var(--background);
+    z-index: -10;
+    position: fixed;
 }
 
 .short-bio-text{
@@ -81,13 +94,55 @@ canva-box{
 }
 
 nav-bar{
+    position: fixed;
+    top: 0%;
+    left: 0%;
     width: 100%;
-    height: 100%;
 }
 
 scroll {
-    position: absolute;
-    bottom: 15%;
+    position: fixed;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
+    opacity: 70%;
+}
+
+.hidden {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+.expanded {
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.transitioning {
+    top: 50%;
+    transform: translate(-27%, -50%) scale(0.7);
+}
+
+.disappearing {
+    transform: translate(-50%, -150%) scale(1.5);
+    transition: transform 0.5s ease-in-out;
+}
+
+.scroll-info{
+    position: fixed;
+    top: 10%;
+    left: 10%;
+}
+
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+conveyor-belt{
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }

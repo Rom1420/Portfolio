@@ -10,7 +10,7 @@
   position: relative;
   height: 3em;
   width: 1.5em;
-  border: .25em solid #fff;
+  border: .25em solid var(--light-white);
   border-radius: 1em;
 }
 
@@ -18,7 +18,7 @@
   display: block;
   position: absolute;
   left: 50%;
-  background: #fff;
+  background: var(--light-white);
   height: .5em;
   width: .5em;
   top: .6em;

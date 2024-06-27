@@ -22,7 +22,7 @@
 * {
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
@@ -30,42 +30,47 @@
 body {
   font-family: 'Inter', sans-serif;
   color: #333333; 
+  background-color: var(--background);
+  width: 100vw;
+  height: 100%;
   font-size: 1rem; 
   line-height: 1.5;
+  font-family: Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  overflow: hidden;
   font-family: 'Inter', sans-serif;
   color: #fff; 
 }
 
 h1 {
-  font-size: 5vw; /* Utiliser vw pour une taille réactive */
+  font-size: 5vw; 
   font-weight: bold;
 }
 
 h2 {
-  font-size: 3.5vw; /* Utiliser vw pour une taille réactive */
+  font-size: 3.5vw; 
   font-weight: bold;
 }
 
 h3 {
-  font-size: 3vw; /* Utiliser vw pour une taille réactive */
+  font-size: 3vw; 
   font-weight: bold;
 }
 
 h4 {
-  font-size: 2.5vw; /* Utiliser vw pour une taille réactive */
+  font-size: 2.5vw; 
   font-weight: bold;
 }
 
 h5 {
-  font-size: 1vw; /* Utiliser vw pour une taille réactive */
+  font-size: 1vw; 
   font-weight: bold;
 }
 
 p {
-  font-size: 1.5vw; /* Utiliser rem pour une base réactive */
+  font-size: 1.5vw; 
 }
 
 
@@ -100,4 +105,5 @@ button:hover{
   --light-white: #ccd6f6;
   --light-white-lighter: #ccd6f6af;
   --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  --transition-text-up: transform 1s ease-in-out, opacity 1s ease-in-out;
 }

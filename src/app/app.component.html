@@ -3,19 +3,41 @@
 </div>
 
 <div class="main-container">
-  <div class="profil-container">
-    <p>Hi, my name is</p>
-    <div class="name-container">
-      <h1 class="firstname">Romain</h1>
-      <h1 class="lastname">ABBONATO</h1>
+  <section class="snap-section">
+    <div class="profil-container">
+      <p class="intro-text">Hi, my name is</p>
+      <div class="name-container">
+        <h1 class="firstname">Romain</h1>
+        <h1 class="lastname">ABBONATO</h1>
+      </div>
+      <h5 class="short-bio-text">
+        I am a third-year student at 
+        <a href="https://polytech.univ-cotedazur.fr/" class="highlight">Polytech Nice Sophia</a>, 
+        pursuing an engineering degree in Computer Science. 
+        Passionate about science and technology, I am excited to become a 
+        <span class="highlight-text">full-stack developer</span> through this program.
+      </h5>
     </div>
-    <h5 class="short-bio-text">I am a third-year student at 
-      <a href="https://polytech.univ-cotedazur.fr/" class="highlight">Polytech Nice Sophia</a>, 
-      pursuing an engineering degree in Computer Science. 
-      Passionate about science and technology, I am excited to become a 
-      <span class="highlight-text">full-stack developer</span> through this program.
-    </h5>
-  </div>
-    <canva-box></canva-box>
+    <planet id="canvaBox"></planet>
+  </section>
+  <section class="snap-section empty-section">
+    <conveyor-belt id="conveyorBelt"></conveyor-belt>
+  </section>
+  <section class="snap-section">
+    <div class="content">
+      <h2>Projects</h2>
+    </div>
+  </section>
+  <section class="snap-section empty-section">
     <scroll></scroll>
+  </section>
+  <section class="snap-section">
+    <div class="content">
+      <h2>Contact</h2>
+    </div>
+  </section>
+</div>
+
+<div class="scroll-info">
+  <p>Scroll Position: {{ scrollPosition }}</p>
 </div>
