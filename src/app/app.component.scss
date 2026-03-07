@@ -5,15 +5,14 @@
     position: relative;
     overflow: visible;
     overflow-x: hidden;
-    scroll-snap-type: y proximity;
-    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
     overflow-y: scroll;
 }
 
 .snap-section {
     width: 100vw;
     height: 100vh;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     display: flex;
     opacity: 1;
 }
