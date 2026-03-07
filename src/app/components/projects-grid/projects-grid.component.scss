@@ -1,0 +1,187 @@
+:host {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 4rem;
+  overflow-y: auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--light-white);
+  margin-bottom: 0.35rem;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: var(--light-white-lighter);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Grid — 3 large cards ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ── Card ── */
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #112240;
+  border: 1px solid rgba(84, 150, 191, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 50px rgba(84, 150, 191, 0.18);
+    border-color: rgba(84, 150, 191, 0.4);
+
+    .screen-video {
+      opacity: 1;
+    }
+    .screen-img,
+    .screen-placeholder {
+      opacity: 0;
+    }
+    .screen-mockup {
+      box-shadow: 0 10px 36px rgba(84, 150, 191, 0.45);
+    }
+    .card-link {
+      color: var(--sea-blue-lighter);
+    }
+  }
+}
+
+/* ── Top area ── */
+.card-top {
+  background: #0a192f;
+  padding: 1.4rem 1.4rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-logo {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.1);
+}
+
+.brand-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--light-white);
+  letter-spacing: 0.01em;
+}
+
+/* ── Inner screen mockup ── */
+.screen-mockup {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55);
+  transition: box-shadow 0.28s ease;
+  background: #1a2f50;
+  flex-shrink: 0;
+}
+
+.screen-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.35s ease;
+}
+
+.screen-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #112240 0%, #1a3a5c 100%);
+  transition: opacity 0.35s ease;
+}
+
+.screen-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* ── Bottom area ── */
+.card-bottom {
+  padding: 1.2rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--light-white);
+  font-family: 'Inter', sans-serif;
+}
+
+.card-desc {
+  font-size: 0.78rem;
+  color: var(--light-white-lighter);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.2rem;
+
+  ::ng-deep .highlight-text {
+    color: var(--sea-blue);
+  }
+}
+
+.card-link {
+  font-family: 'FiraCode', monospace;
+  font-size: 0.78rem;
+  color: var(--sea-blue);
+  transition: color 0.25s ease;
+  margin-top: auto;
+}

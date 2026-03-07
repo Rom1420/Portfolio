@@ -7,21 +7,19 @@ import { PlanetComponent } from './components/planet/planet.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ScrollComponent } from './components/scroll/scroll.component';
 import { ScrollService } from './services/scroll.service';
-import { ConveyorBeltComponent } from './components/conveyor-belt/conveyor-belt.component';
-import { ProjectNavbarComponent } from './components/project-navbar/project-navbar.component';
+import { ProjectsGridComponent } from './components/projects-grid/projects-grid.component';
 
 @NgModule({
   imports: [
-    BrowserModule, 
+    BrowserModule,
     FormsModule,
   ],
   declarations: [
-    AppComponent, 
+    AppComponent,
     PlanetComponent,
     NavBarComponent,
     ScrollComponent,
-    ConveyorBeltComponent,
-    ProjectNavbarComponent,
+    ProjectsGridComponent,
   ],
   providers: [ScrollService],
   bootstrap: [AppComponent],

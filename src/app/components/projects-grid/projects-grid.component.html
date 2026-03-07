@@ -1,0 +1,54 @@
+<div class="section-wrapper">
+  <div class="section-header">
+    <h2 class="section-title">My Projects</h2>
+    <p class="section-subtitle">A selection of work I've built and designed</p>
+  </div>
+
+  <div class="grid">
+    <a
+      *ngFor="let project of projects; let i = index"
+      [href]="project.link"
+      target="_blank"
+      class="card"
+      (mouseenter)="onMouseEnter(i)"
+      (mouseleave)="onMouseLeave(i)"
+    >
+      <!-- Top area: logo + inner screen mockup -->
+      <div class="card-top">
+        <div class="card-brand">
+          <img [src]="'assets/logos/' + project.logo" [alt]="project.title" class="brand-logo" />
+          <span class="brand-name">{{ project.title }}</span>
+        </div>
+
+        <div class="screen-mockup">
+          <img
+            *ngIf="project.image"
+            [src]="'assets/projects/' + project.image"
+            [alt]="project.title"
+            class="screen-img"
+          />
+          <div *ngIf="!project.image" class="screen-placeholder"></div>
+          <video
+            *ngIf="project.video"
+            #cardVideo
+            [src]="'assets/projects/' + project.video"
+            class="screen-video"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          ></video>
+          <!-- dummy ref for projects without video to keep QueryList in sync -->
+          <video *ngIf="!project.video" #cardVideo style="display:none"></video>
+        </div>
+      </div>
+
+      <!-- Bottom area: description -->
+      <div class="card-bottom">
+        <h3 class="card-title">{{ project.title }}</h3>
+        <p class="card-desc" [innerHTML]="project.description"></p>
+        <span class="card-link">View project &rarr;</span>
+      </div>
+    </a>
+  </div>
+</div>
